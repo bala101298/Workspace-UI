@@ -85,6 +85,7 @@ class _NextPageState extends State<NextPage> {
                 height: 20,
               ),
               TextField(
+                maxLines: 3,
                 decoration: InputDecoration(
                   hintText: 'Project Description',
                   border: OutlineInputBorder(
@@ -95,17 +96,41 @@ class _NextPageState extends State<NextPage> {
               SizedBox(
                 height: 40,
               ),
+              Container(
+                child: Text('Start Date:',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: <Widget>[
-                  Text(
-                    "Start Date",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    width: 220,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Start Date',
+                        hintStyle: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 40,
                   ),
                   IconButton(
                     icon: Icon(Icons.date_range),
@@ -116,17 +141,38 @@ class _NextPageState extends State<NextPage> {
               SizedBox(
                 height: 40,
               ),
+              Container(
+                child: Text('End Date',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
               Row(
                 children: <Widget>[
-                  Text(
-                    "End Date",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    width: 220,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter End Date',
+                        hintStyle: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 40,
                   ),
                   IconButton(
                     icon: Icon(Icons.date_range),
@@ -134,6 +180,23 @@ class _NextPageState extends State<NextPage> {
                   ),
                 ],
               ),
+             SizedBox(height: 40),
+              MaterialButton(
+                minWidth: 20,
+                onPressed: () {},
+                color: Colors.greenAccent,
+                textColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text('Confirm',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
@@ -141,3 +204,6 @@ class _NextPageState extends State<NextPage> {
     );
   }
 }
+
+
+
