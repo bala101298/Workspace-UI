@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tasking/constants.dart';
 
-class NextPage extends StatefulWidget {
+class AddProject extends StatefulWidget {
   @override
-  _NextPageState createState() => _NextPageState();
+  _AddProjectState createState() => _AddProjectState();
 }
 
-class _NextPageState extends State<NextPage> {
+class _AddProjectState extends State<AddProject> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,15 +25,12 @@ class _NextPageState extends State<NextPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
                 child: Text(
                   'Project Name:',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: kHeadingTextStyle,
                 ),
               ),
               SizedBox(height: 20),
@@ -48,10 +46,7 @@ class _NextPageState extends State<NextPage> {
               Container(
                 child: Text(
                   'Add Members:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                  style: kHeadingTextStyle,
                 ),
               ),
               SizedBox(height: 20),
@@ -76,10 +71,7 @@ class _NextPageState extends State<NextPage> {
               ),
               Text(
                 'Project Description',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: kHeadingTextStyle,
               ),
               SizedBox(
                 height: 20,
@@ -97,11 +89,9 @@ class _NextPageState extends State<NextPage> {
                 height: 40,
               ),
               Container(
-                child: Text('Start Date:',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                child: Text(
+                  'Start Date:',
+                  style: kHeadingTextStyle,
                 ),
               ),
               SizedBox(
@@ -142,11 +132,9 @@ class _NextPageState extends State<NextPage> {
                 height: 40,
               ),
               Container(
-                child: Text('End Date',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                child: Text(
+                  'End Date',
+                  style: kHeadingTextStyle,
                 ),
               ),
               Row(
@@ -180,23 +168,25 @@ class _NextPageState extends State<NextPage> {
                   ),
                 ],
               ),
-             SizedBox(height: 40),
-              MaterialButton(
-                minWidth: 20,
-                onPressed: () {},
-                color: Colors.greenAccent,
-                textColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text('Confirm',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+              SizedBox(height: 40),
+              Center(
+                child: MaterialButton(
+                  minWidth: 20,
+                  onPressed: () {},
+                  color: Colors.greenAccent,
+                  textColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    'Confirm',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-
             ],
           ),
         ),
@@ -204,6 +194,3 @@ class _NextPageState extends State<NextPage> {
     );
   }
 }
-
-
-

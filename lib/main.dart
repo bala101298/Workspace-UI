@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tasking/constants.dart';
+import 'package:tasking/project_page.dart';
 
-import 'next_page.dart';
-// import 'package:tasking/next_page.dart';
+import 'addproject_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        backgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(color: Colors.white ),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -46,94 +49,92 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(left: 10, top: 15),
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.orangeAccent,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        'PROJECT NAME',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+              GestureDetector(
+                onTap: () {
+                      Navigator.push(
+                      context, MaterialPageRoute(builder: (context)=> ProjectPage()
+                      ));
+                         },
+                child: Container(
+                  padding: EdgeInsets.only(left: 10, top: 15),
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.orangeAccent,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          'PROJECT NAME',
+                          style: kHeadingTextStyle,
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: <Widget>[
-                        Container(
-                          child: Text(
-                            'MEMBERS:',
-                            style: TextStyle(
-                              fontSize: 20,
+                      SizedBox(height: 20),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            child: Text(
+                              'MEMBERS:',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 80),
-                        Container(
-                          child: Text(
-                            'DROP DOWN',
-                            style: TextStyle(
-                              fontSize: 20,
+                          SizedBox(width: 80),
+                          Container(
+                            child: Text(
+                              'DROP DOWN',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: <Widget>[
-                        Container(
-                          child: Text(
-                            'Date of Submission:',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            child: Text(
+                              'Date of Submission:',
+                              style: kHeadingTextStyle,
                             ),
                           ),
-                        ),
-                        SizedBox(width: 20),
-                        Container(
-                          child: Text(
-                            'Date',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(width: 20),
+                          Container(
+                            child: Text(
+                              'Date',
+                              style: kHeadingTextStyle,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: <Widget>[
-                        Container(
-                          child: Text(
-                            'Created On:',
-                            style: TextStyle(
-                              fontSize: 20,
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            child: Text(
+                              'Created On:',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 20),
-                        Container(
-                          child: Text(
-                            'Date of Creation',
-                            style: TextStyle(
-                              fontSize: 20,
+                          SizedBox(width: 20),
+                          Container(
+                            child: Text(
+                              'Date of Creation',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
                             ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -144,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => NextPage()));
+              context, MaterialPageRoute(builder: (context) => AddProject()));
         },
         tooltip: 'Add Project',
         child: Icon(Icons.add),
